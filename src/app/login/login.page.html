@@ -1,0 +1,68 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<ion-header>
+  <ion-toolbar class="login-header">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon  size="large" name="person-circle-outline" style="color:White;"></ion-icon>
+      </ion-button>
+    </ion-buttons>   
+    <ion-buttons slot="primary">
+      <ion-button color="secondary">
+        <ion-icon style="color: white;" slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="iontit" align="center">RESTAPI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <form (ngSubmit)="login()" [formGroup]="uyelikBilgisi">
+    
+    <div class="input-group">
+      <ion-item class="input-color">
+        <ion-label><ion-icon style="font-size: 30px; color: rgb(49, 49, 49);" name="mail" item-left></ion-icon></ion-label>
+        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+        <span *ngIf="email.errors?.required">Eposta Gereklidir</span>
+        <span *ngIf="email.errors?.email">Geçersiz Eposta Adresi</span>
+      </div>
+
+      <ion-item class="input-color">
+        <ion-label><ion-icon style="font-size: 30px; color: rgb(49, 49, 49);" name="key" item-left></ion-icon></ion-label>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+      <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+        <span *ngIf="password.errors?.required">Parola Gereklidir</span>
+        <span *ngIf="password.errors?.minlength">Parolanız en az 6 karakter olmalıdır</span>
+      </div>
+    </div>
+
+    <ion-button class="circle-button" type="submit" expand="block" [disabled]="!uyelikBilgisi.valid">GİRİŞ YAP</ion-button>
+    <ion-button type="button" expand="block" color="light" fill="clear" [routerLink]="['/signup']">Üye Ol</ion-button>
+  
+  
+  </form>
+
+</ion-content>
+
+
+
+
+
+<ion-footer   collapse="fade">
+  <ion-toolbar class="login-footer">
+    <ion-title class="attentlbl">
+      <div style="white-space: normal;">
+        iPhone 6/7/8 görünümü için daha uygundur.
+      </div>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-footer>

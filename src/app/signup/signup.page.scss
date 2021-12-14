@@ -1,0 +1,83 @@
+/* #region  sources */
+    //title: basic UI template with using ionic 
+    //https://github.com/leventkeles
+    //https://css3gen.com/text-shadow/ text shadow generator
+    //https://cssgradient.io
+    //https://uigradients.com
+    //https://getcssscan.com/css-box-shadow-examples
+    //https://ionic.io/ionicons
+    //https://fonts.google.com
+/* #endregion */
+
+
+ion-content {
+    --padding-top: 15%;
+    --padding-start: 10%;
+    --padding-end: 10%;
+
+    //linear gradient(0.7)+backgorund img, no-repeat and centered
+    --background: rgb(76,184,196);
+    --background: linear-gradient(90deg, rgba(76,184,196,0.7) 0%, rgba(60,211,173,0.7) 100%), url('https://i.pinimg.com/originals/4a/8f/9a/4a8f9a8ef0efff251245ff571f5bbd0d.gif') 0 0/100% 100% no-repeat;
+
+}
+
+
+
+.input-group {
+    --background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    
+}
+
+.errors {
+    font-size: small;
+    color: #fff;
+    background: var(--ion-color-danger);
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+ion-title{
+    font-size: 1.5em;
+}
+
+.login-header{
+    //arkaplanı transparent yapar
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.20);
+    font-family: 'Bakbak One', cursive;
+    }
+
+//remove bg for fullsize 
+.header-md::after {
+    background-image: none;
+}
+
+/* Remove bottom border */
+.header-ios ion-toolbar:last-child {
+    --border-width: 0;
+}
+
+.input-color{
+font-family: 'Roboto', sans-serif;   
+--background: rgba(236, 236, 236, 0.5);
+color: rgb(49, 49, 49);
+}
+
+.circle-button{
+    font-family: 'Roboto', sans-serif;
+    --background: rgb(67, 74, 175);
+    --border-radius: 10px;
+    color: white;
+    height: 60px;
+    padding-bottom: 10px;
+    } 
+
+.circle-button:focus{
+    --background-activated: rgb(49, 49, 49);;
+} 
